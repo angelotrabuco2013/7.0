@@ -571,4 +571,5 @@ Examine the read, write, and select apis for these terminals to learn all you ca
 
 New in iOS 7.0 security protections, you are now no longer allowed to remount the root partition as readable/writeable. Before we just change the /etc/fstab file to remount the filesystems, but now there is a special kernel check preventing root filesystem from being remounted. Also the user filesystem containing all the data is mounted to disallow super user files, and device nodes. Luckily, if we can remount the user filesystem to reallow superuser and device node files we can create this device node and launch the kernel exploit on iOS7.
 
-[^1]: The iPhone Wiki, Http. “Evasi0n7 - the IPhone Wiki.” Www.theiphonewiki.com, 17 Sept. 2021, www.theiphonewiki.com/wiki/Evasi0n7#Research. Accessed 31 Jan. 2024.
+## Works Cited
+[^1]: The iPhone Wiki, Http. <q>Evasi0n7 - the IPhone Wiki.</q> The iPhone Wiki, 17 Sept. 2021, <a href="www.theiphonewiki.com/wiki/Evasi0n7#Research">https://www.theiphonewiki.com/wiki/Evasi0n7#Research</a>. Retrieved 31 Jan. 2024.
