@@ -15,7 +15,7 @@ There are six executables provided. `.app` executables are for macOS, and `.exe`
 *  `evasi0n7-16` are the patched files, re-patched to this repository.
 *  `evasi0n7-20` are patched files, requiring a local server set up.
 
-## Research and patching
+## Research and patching [^1]
 ### Mach-O
 ***
 evasi0n7 is a single architecture (i386) unsigned binary. The app is self-contained, meaning it packages all of its resources into the Mach-O. Using <a href="http://www.newosxbook.com/files/jtool.tar">jtool</a> to inspect the Mach-O header of the binary shows that there is some added sections in the ```__DATA``` segment.
@@ -570,3 +570,5 @@ It crashes here before dereferenceing the tty structure at the beginning of the 
 Examine the read, write, and select apis for these terminals to learn all you can do. ioctl calls might also be interesting. Also since it uses the tty zone for allocating this devices, it might be a very predictable zone if we can control all the pseudo terminals. Also checking out return values based on flags in structs can be a good way to feel around in memory.
 
 New in iOS 7.0 security protections, you are now no longer allowed to remount the root partition as readable/writeable. Before we just change the /etc/fstab file to remount the filesystems, but now there is a special kernel check preventing root filesystem from being remounted. Also the user filesystem containing all the data is mounted to disallow super user files, and device nodes. Luckily, if we can remount the user filesystem to reallow superuser and device node files we can create this device node and launch the kernel exploit on iOS7.
+
+[^1]: The iPhone Wiki, Http. “Evasi0n7 - the IPhone Wiki.” Www.theiphonewiki.com, 17 Sept. 2021, www.theiphonewiki.com/wiki/Evasi0n7#Research. Accessed 31 Jan. 2024.
