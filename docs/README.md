@@ -1,6 +1,6 @@
-# 7.0
+# /7.0/
 
-Getting evasi0n7 (for jailbreaking iOS 7.0.x) to play nicely!
+Getting evasi0n7 (for jailbreaking iOS 7.0.x) to play nicely, or at least be able to work!
 
 Please go to the repository [here](https://github.com/UInt2048/7.0) for the patched apps,
 which you will find in the `execs` folder.
@@ -14,6 +14,35 @@ There are six executables provided. `.app` executables are for macOS, and `.exe`
 *  `evasi0n7-14` are the original unpatched files.
 *  `evasi0n7-16` are the patched files, re-patched to this repository.
 *  `evasi0n7-20` are patched files, requiring a local server set up.
+
+## Details
+**evasi0n7** is a jailbreak program from the evad3rs. It performs an untethered jailbreak for all devices on iOS 7.0 through 7.1 beta 3, except the Apple TV. It was initially released on 22 December 2013, and became subject to controversy and criticism/backlash. On 28 December 2013, the Cydia package went live to saurik's repo.
+
+## *Supported Devices*
+The only unsupported devices are those of the Apple TV family. All other devices capable of running iOS 7 are supported.
+
+### Apple TV's
+
+* evasi0n7 is not capable of jailbreaking the Apple TV's. According to nitoTV, in his "Why isn't the Apple TV 3 jailbroken?" WWJC 2014 talk (<a href="https://www.youtube.com/watch?v=gaan3m8tt-c&t=15m35s&list=PLznXKK7IvpwdqQ6WZIS68yZymkGYYHNO4">video</a>), evasi0n7 would have been able to jailbreak the Apple TV (2nd generation) but was never updated to properly support it.
+
+## Pre-patched versions
+
+### evasi0n7-14
+
+The original (not patched) evasi0n7 (version 1.0.7), which required a plist at http://evasi0n.com/apple-ipa-info.plist to exist (but that link is dead now). Useful for diff-checking, or just making sure the hashes are what they're supposed to be. Exactly the same as extracted from https://web.archive.org/web/20201017172130if_/https://evasiondownload.us/downloads/evasi0n7-win-1.0.7.zip and https://web.archive.org/web/20160627202955if_/http://evasiondownload.us/downloads/evasi0n7-mac-1.0.7.dmg (confirmed hashes against https://www.theiphonewiki.com/wiki/Evasi0n7)
+
+### evasi0n7-16
+
+Patched in 2016 by [Reddit user u/spockers](https://www.reddit.com/r/sauriksbeard/comments/62nknk/evasi0n7_fix_for_cannot_retrieve_package_from_the/). However, the patching URLs at http://sauriksbeard.com are now also dead! Consequently, the files have been posted here and re-patched to GitHub instead. This one requires the plist at https://uint2048.github.io/7.0/16.plist.
+
+`WWDC16.ipa` was downloaded from: https://web.archive.org/web/20160130010626if_/http://sauriksbeard.com/WWDC.ipa
+
+### evasi0n7-20
+
+Patched in 2020 by yours truly with a plist authored by [Reddit user u/Whistler_V6T](https://www.reddit.com/r/LegacyJailbreak/comments/ifmlpx/tutorial_how_to_jailbreak_ios_70x_with_evasi0n7/)! If you're worried this URL business will happen again, now you don't need to! This patch changes the URL to http://localhost/evasi0n-ipa-info.plist (so you'll need to download `18.plist` and rename it, and `WWDC16.ipa` and rename it to `WWDC.ipa`).
+
+You can use a Python one-liner such as `sudo python3 -m http.server 80` or a program such as WAMP or MAMP to set up a local server. There are undoubtedly numerous methods to do this, but setting up a local server is outside of the scope of this repository.
+
 
 ## Research and patching [^1]
 ### Mach-O
@@ -202,7 +231,7 @@ Digging into the code in the binary, it appears as these commands are used to do
 * **Changes**: patching bytes ```7a 68``` (<q>zh</q>) to ```78 78``` (<q>xx</q>), replacing ```E8C30000008A00``` with ```9090909090B000```, and replacing ```9090909090B001``` with ```9090909090B000```
 * **Result**: Check always fails
 
-## Exploit Breakdowns
+## Exploit Breakdowns (Village Pump)
 
 ### <a href="http://pastebin.com/mT2n7uyj">Write-up by Braden Thomas</a>
 
@@ -571,5 +600,9 @@ Examine the read, write, and select apis for these terminals to learn all you ca
 
 New in iOS 7.0 security protections, you are now no longer allowed to remount the root partition as readable/writeable. Before we just change the /etc/fstab file to remount the filesystems, but now there is a special kernel check preventing root filesystem from being remounted. Also the user filesystem containing all the data is mounted to disallow super user files, and device nodes. Luckily, if we can remount the user filesystem to reallow superuser and device node files we can create this device node and launch the kernel exploit on iOS7.
 
-## Works Cited
-[^1]: The iPhone Wiki, Http. <q>Evasi0n7 - the IPhone Wiki.</q> The iPhone Wiki, 17 Sept. 2021, <a href="www.theiphonewiki.com/wiki/Evasi0n7#Research">https://www.theiphonewiki.com/wiki/Evasi0n7#Research</a>. Retrieved 31 Jan. 2024.
+## See Also
+* <a href="https://www.theiphonewiki.com/wiki/Evad3rs">evad3rs</a>
+* <a href="https://www.theiphonewiki.com/wiki/Evasi0n">evasi0n</a>
+
+#### References
+[^1]: The iPhone Wiki, IAdam1n. <q>Evasi0n7 - the IPhone Wiki.</q> The iPhone Wiki, 17 Sept. 2021, <a href="www.theiphonewiki.com/wiki/Evasi0n7#Research">https://www.theiphonewiki.com/wiki/Evasi0n7#Research</a>. Retrieved 31 Jan. 2024.
