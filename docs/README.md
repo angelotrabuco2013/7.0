@@ -1,4 +1,4 @@
-# /7.0/
+# 7.0
 
 Getting evasi0n7 (for jailbreaking iOS 7.0.x) to play nicely, or at least be able to work!
 
