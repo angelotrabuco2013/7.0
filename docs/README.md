@@ -605,4 +605,4 @@ New in iOS 7.0 security protections, you are now no longer allowed to remount th
 * <a href="https://www.theiphonewiki.com/wiki/Evasi0n">evasi0n</a>
 
 #### References
-[^1]: The iPhone Wiki, IAdam1n. <q>Evasi0n7 - the IPhone Wiki.</q> The iPhone Wiki, 17 Sept. 2021, <a href="www.theiphonewiki.com/wiki/Evasi0n7#Research">https://www.theiphonewiki.com/wiki/Evasi0n7#Research</a>. Retrieved 31 Jan. 2024.
+[^1]: The iPhone Wiki, IAdam1n. <q>Evasi0n7 - the IPhone Wiki.</q> The iPhone Wiki, 17 Sept. 2021, <a href="https://www.theiphonewiki.com/wiki/Evasi0n7#Research">https://www.theiphonewiki.com/wiki/Evasi0n7#Research</a>. Retrieved 31 Jan. 2024.
